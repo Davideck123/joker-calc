@@ -1,1 +1,1 @@
-# joker-calc
+# Joker - Java poker calculator
