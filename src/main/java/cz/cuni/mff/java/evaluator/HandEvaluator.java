@@ -1,14 +1,16 @@
 package cz.cuni.mff.java.evaluator;
 
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Objects;
+import cz.cuni.mff.java.card.Card;
 
 public final class HandEvaluator {
     private HandEvaluator() {
 
+    }
+
+    public static short evaluate7Cards(Card a, Card b, Card c, Card d, Card e, Card f, Card g) {
+        return evaluate7Cards(
+                a.getCardId(), b.getCardId(), c.getCardId(), d.getCardId(), e.getCardId(), f.getCardId(), g.getCardId()
+        );
     }
 
     public static short evaluate7Cards(int a, int b, int c, int d, int e, int f, int g) {
@@ -66,19 +68,7 @@ public final class HandEvaluator {
         return sum;
     }
 
-    private static final short[] NOFLUSH7;//Hashtable7.NOFLUSH7;
-
-    static {
-        NOFLUSH7 = new short[49205];
-        try (DataInputStream inputStream = new DataInputStream(Objects.requireNonNull(HandEvaluator.class.getClassLoader().getResourceAsStream("noflush7.dat")))) {
-            int length = inputStream.available() / Short.BYTES;
-            for (int i = 0; i < length; i++) {
-                NOFLUSH7[i] = inputStream.readShort();
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    private static final short[] NOFLUSH7 = Hashtable7.NOFLUSH7;
 
     // placeholder for now
     private static final int[][][] DP = DPTables.DP;

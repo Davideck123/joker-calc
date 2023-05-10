@@ -1,11 +1,45 @@
 package cz.cuni.mff.java;
 
+import cz.cuni.mff.java.card.Card;
 import cz.cuni.mff.java.evaluator.HandEvaluator;
 
 public class Main {
+
     public static void main(String[] args) {
+        testEvalInt();
+        testEvalCard();
+    }
 
+    private static void testEvalCard() {
+        // Community cards
+        Card a = new Card("9c");
+        Card b = new Card("4c");
+        Card c = new Card("4s");
+        Card d = new Card("9d");
+        Card e = new Card("4h");
 
+        // Player 1
+        Card f = new Card("Qc");
+        Card g = new Card("6c");
+
+        // Player 2
+        Card h = new Card("2c");
+        Card i = new Card("9h");
+
+        // Evaluating the hand of player 1
+        int rank1 = HandEvaluator.evaluate7Cards(a, b, c, d, e, f, g);
+        // Evaluating the hand of player 2
+        int rank2 = HandEvaluator.evaluate7Cards(a, b, c, d, e, h, i);
+
+        assert(rank1 == 292);
+        assert(rank2 == 236);
+
+        System.out.printf("The rank of the hand in player 1 is %d\n", rank1); // expected 292
+        System.out.printf("The rank of the hand in player 2 is %d\n", rank2); // expected 236
+        System.out.println("Player 2 has a stronger hand");
+    }
+
+    private static void testEvalInt() {
         // Community cards
         int a = 7 * 4 + 0; // 9c
         int b = 2 * 4 + 0; // 4c
