@@ -1,7 +1,10 @@
-package cz.cuni.mff.java.card;
+package cz.matfyz.rudad.joker.card;
 
 import java.util.Map;
 
+/**
+ * Represents the ranks of a card in a deck.
+ */
 public enum Rank {
     TWO(RankAlias.TWO),
     THREE(RankAlias.THREE),
@@ -32,27 +35,68 @@ public enum Rank {
             Map.entry(RankAlias.KING, KING),
             Map.entry(RankAlias.ACE, ACE)
     );
+
     private final char alias;
 
+    /**
+     * Constructs a new Rank with the specified alias.
+     *
+     * @param alias the character alias for the rank
+     */
     Rank(char alias) {
         this.alias = alias;
     }
 
-    public char getAlias() {
-        return alias;
+    /**
+     * Returns the Rank corresponding to the given alias.
+     *
+     * @param alias the character alias to look up
+     * @return the Rank associated with the alias
+     * @throws IllegalArgumentException if the alias is invalid
+     */
+    public static Rank fromAlias(char alias) throws IllegalArgumentException {
+        var rank = aliasMap.get(Character.toUpperCase(alias));
+        if (rank == null) {
+            throw new IllegalArgumentException(String.format("Invalid rank alias \"%c\"", alias));
+        }
+        return rank;
     }
 
-    public static Rank fromAlias(char alias) {
-        return aliasMap.get(alias);
-    }
-
-    public static Rank fromAlias(String alias) {
+    /**
+     * Returns the Rank corresponding to the given alias.
+     *
+     * @param alias the string alias to look up
+     * @return the Rank associated with the alias
+     * @throws IllegalArgumentException if the alias is invalid
+     */
+    public static Rank fromAlias(String alias) throws IllegalArgumentException {
         assert alias.length() == 1;
         return fromAlias(alias.charAt(0));
     }
 
+    /**
+     * Returns the character alias of the rank.
+     *
+     * @return the character alias
+     */
+    public char getAlias() {
+        return alias;
+    }
+
+    /**
+     * Returns the string representation of the rank.
+     *
+     * @return the string representation
+     */
+    @Override
+    public String toString() {
+        return String.valueOf(alias);
+    }
 }
 
+/**
+ * Contains aliases for the ranks.
+ */
 class RankAlias {
     static final char TWO = '2';
     static final char THREE = '3';

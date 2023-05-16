@@ -1,7 +1,7 @@
-package cz.cuni.mff.java;
+package cz.matfyz.rudad.joker;
 
-import cz.cuni.mff.java.card.Card;
-import cz.cuni.mff.java.evaluator.HandEvaluator;
+import cz.matfyz.rudad.joker.card.Card;
+import cz.matfyz.rudad.joker.evaluator.HandEvaluator;
 
 public class Main {
 
@@ -12,19 +12,19 @@ public class Main {
 
     private static void testEvalCard() {
         // Community cards
-        Card a = new Card("9c");
-        Card b = new Card("4c");
-        Card c = new Card("4s");
-        Card d = new Card("9d");
-        Card e = new Card("4h");
+        Card a = Card.getInstance("9c");
+        Card b = Card.getInstance("4c");
+        Card c = Card.getInstance("4s");
+        Card d = Card.getInstance("9d");
+        Card e = Card.getInstance("4h");
 
         // Player 1
-        Card f = new Card("Qc");
-        Card g = new Card("6c");
+        Card f = Card.getInstance("Qc");
+        Card g = Card.getInstance("6c");
 
         // Player 2
-        Card h = new Card("2c");
-        Card i = new Card("9h");
+        Card h = Card.getInstance("2c");
+        Card i = Card.getInstance("9h");
 
         // Evaluating the hand of player 1
         int rank1 = HandEvaluator.evaluate7Cards(a, b, c, d, e, f, g);

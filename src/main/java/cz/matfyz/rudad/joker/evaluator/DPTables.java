@@ -1,4 +1,4 @@
-package cz.cuni.mff.java.evaluator;
+package cz.matfyz.rudad.joker.evaluator;
 
 class DPTables {
 
