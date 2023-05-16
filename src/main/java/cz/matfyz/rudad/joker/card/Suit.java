@@ -31,15 +31,6 @@ public enum Suit {
     }
 
     /**
-     * Returns the character alias of the suit.
-     *
-     * @return the character alias
-     */
-    public char getAlias() {
-        return alias;
-    }
-
-    /**
      * Returns the Suit corresponding to the given alias.
      *
      * @param alias the character alias to look up
@@ -67,6 +58,15 @@ public enum Suit {
     }
 
     /**
+     * Returns the character alias of the suit.
+     *
+     * @return the character alias
+     */
+    public char getAlias() {
+        return alias;
+    }
+
+    /**
      * Returns the string representation of the suit.
      *
      * @return the string representation
@@ -85,4 +85,4 @@ class SuitAlias {
     static final char DIAMONDS = 'd';
     static final char HEARTS = 'h';
     static final char SPADES = 's';
-};
+}

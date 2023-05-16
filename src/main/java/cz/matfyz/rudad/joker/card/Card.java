@@ -1,11 +1,29 @@
 package cz.matfyz.rudad.joker.card;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Represents a card in a deck.
  */
 public class Card implements AutoCloseable {
+
+    private static final int NUMBER_OF_CARDS = Rank.values().length * Suit.values().length;
+    private static final Map<Integer, Card> createdCards = new HashMap<>();
+    private final Rank rank;
+    private final Suit suit;
+    private final int cardId;
+
+    /**
+     * Constructs a Card instance with the given card ID.
+     *
+     * @param cardId the ID of the card
+     */
+    private Card(int cardId) {
+        rank = Rank.values()[cardId / Suit.values().length];
+        suit = Suit.values()[cardId % Suit.values().length];
+        this.cardId = cardId;
+    }
 
     /**
      * Returns a Card instance based on the provided card alias.
@@ -52,17 +70,6 @@ public class Card implements AutoCloseable {
         Card card = new Card(cardId);
         createdCards.put(cardId, card);
         return card;
-    }
-
-    /**
-     * Constructs a Card instance with the given card ID.
-     *
-     * @param cardId the ID of the card
-     */
-    private Card(int cardId) {
-        rank = Rank.values()[cardId / Suit.values().length];
-        suit = Suit.values()[cardId % Suit.values().length];
-        this.cardId = cardId;
     }
 
     /**
@@ -132,13 +139,5 @@ public class Card implements AutoCloseable {
     public String toString() {
         return rank.toString() + suit;
     }
-
-    private final Rank rank;
-    private final Suit suit;
-    private final int cardId;
-
-    private static final int NUMBER_OF_CARDS = Rank.values().length * Suit.values().length;
-
-    private static final Map<Integer, Card> createdCards = new HashMap<>();
 
 }
