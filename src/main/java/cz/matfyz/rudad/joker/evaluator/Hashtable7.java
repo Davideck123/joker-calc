@@ -23,14 +23,19 @@ class Hashtable7 {
 
     static {
         NOFLUSH7 = new short[49205];
+        // The binary data file contains space-separated values for the NOFLUSH7 lookup table.
         try (InputStream inputStream = Objects.requireNonNull(Evaluator.class.getClassLoader().getResourceAsStream(TABLE_FILE_NAME));
              DataInputStream dataInputStream = new DataInputStream(inputStream)) {
             int length = dataInputStream.available() / Short.BYTES;
-            for (int i = 0; i < length; i++) {
+            for (int i = 0; i < length; ++i) {
                 NOFLUSH7[i] = dataInputStream.readShort();
             }
+        }
+        // Throw an exception if the file is not found or an error occurs while reading it.
+        catch (NullPointerException e) {
+            throw new RuntimeException("The file " + TABLE_FILE_NAME + " was not found in resources");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("An error occurred while reading the file " + TABLE_FILE_NAME + ".");
         }
     }
 
