@@ -1,11 +1,15 @@
 package cz.matfyz.rudad.joker.evaluator;
 
+/**
+ * Contains hash table for flushes.
+ * Source: <a href="https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/src/hashtable.c">hashtable.c</a>
+ */
 class HashtableFlush {
 
-    private HashtableFlush() {
-
-    }
-
+    /**
+     * Hash table for flushes.
+     * Source: <a href="https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/src/hashtable.c#L19">hashtable.c</a>
+     */
     static final short[] FLUSH = {
             0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0,
@@ -1032,6 +1036,5 @@ class HashtableFlush {
             1, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0,
     };
-
 
 }

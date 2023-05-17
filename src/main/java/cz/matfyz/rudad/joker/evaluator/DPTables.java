@@ -1,11 +1,15 @@
 package cz.matfyz.rudad.joker.evaluator;
 
+/**
+ * Contains DP tables used in the hand evaluator.
+ * Source: <a href="https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/src/dptables.c">dptables.c</a>
+ */
 class DPTables {
 
-    private DPTables() {
-
-    }
-
+    /**
+     * DP table for computing the quinary hash of a hand.
+     * Source: <a href="https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/src/dptables.c#L234">dptables.c</a>
+     */
     static final int[][][] DP = {
             {
                     { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -89,6 +93,10 @@ class DPTables {
             },
     };
 
+    /**
+     * Hash table for checking if and which suit is flush.
+     * Source: <a href="https://github.com/HenryRLee/PokerHandEvaluator/blob/master/cpp/src/dptables.c#L317">dptables.c</a>
+     */
     static final byte[] SUITS = {
             0, 0, 0, 0, 0, 1, 1, 1,
             1, 1, 0, 0, 0, 1, 1, 1,
