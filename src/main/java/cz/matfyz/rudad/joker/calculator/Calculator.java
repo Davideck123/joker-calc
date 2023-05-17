@@ -38,7 +38,6 @@ public class Calculator {
     public Calculator(List<Player> players) throws IllegalArgumentException {
         this(players, new ArrayList<>(), new ArrayList<>());
     }
-
     /**
      * Creates a Calculator object with the specified players and board cards.
      *
@@ -49,7 +48,6 @@ public class Calculator {
     public Calculator(List<Player> players, ArrayList<Card> board) throws IllegalArgumentException {
         this(players, board, new ArrayList<>());
     }
-
     /**
      * Creates a Calculator object with the specified players and dead cards.
      *
@@ -117,11 +115,38 @@ public class Calculator {
                 return;
             }
             Calculator calculator = new Calculator(calculatorArgs);
-            calculator.calculate().printProbabilities();
+            calculator.calculate().printOdds();
         } catch (CommandLine.PicocliException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
             calculatorArgs.getCommandLine().usage(System.out);
         }
+    }
+
+    /**
+     * Returns the array of players in the calculator.
+     *
+     * @return an array of players
+     */
+    public Player[] getPlayers() {
+        return players;
+    }
+
+    /**
+     * Returns the array of board cards in the calculator.
+     *
+     * @return an array of board cards
+     */
+    public Card[] getBoard() {
+        return board;
+    }
+
+    /**
+     * Returns the array of dead cards in the calculator.
+     *
+     * @return an array of dead cards
+     */
+    public Card[] getDeadCards() {
+        return deadCards;
     }
 
     /**
@@ -258,9 +283,9 @@ public class Calculator {
     }
 
     /**
-     * Prints a summary of the probabilities of winning and tying for each player.
+     * Prints a summary of the odds of winning and tying for each player.
      */
-    public void printProbabilities() {
+    public void printOdds() {
         System.out.printf("        %s     %s\n", "Win", "Tie");
         for (Player player : players) {
             System.out.printf("%s: %6.2f%% %6.2f%%\n", player, 100 * player.getWinProbability(), 100 * player.getTieProbability());
