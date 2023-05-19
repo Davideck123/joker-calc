@@ -6,7 +6,7 @@ which contains [a detailed explanation](https://github.com/HenryRLee/PokerHandEv
 The calculator then evaluates all combinations of cards that are left in the deck, and calculates the probability of each player winning/splitting.
 
 ## API docs
-Javadoc available [HERE](./docs/index.html)
+Javadoc available [HERE](https://davideck123.github.io/joker-calc/docs)
 
 ## Usage
 Cards are specified as card aliases (two character strings), where the first character is the rank 
