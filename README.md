@@ -1,12 +1,11 @@
 # 🃏 JOKER - Java pOKER Calculator
 
+[![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://davideck123.github.io/joker-calc/docs)
+
 **Joker calculator** is a 7-card Texas Hold'em poker odds calculator and evaluator.  
 The evaluator is a Java port of [PokerHandEvaluator](https://github.com/HenryRLee/PokerHandEvaluator) by [HenryRLee](https://github.com/HenryRLee), 
 which contains [a detailed explanation](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/Documentation/Algorithm.md) of the hand evaluation algorithm.
 The calculator then evaluates all combinations of cards that are left in the deck, and calculates the probability of each player winning/splitting.
-
-## API docs
-Javadoc available [HERE](https://davideck123.github.io/joker-calc/docs)
 
 ## Usage
 Cards are specified as card aliases (two character strings), where the first character is the rank 
@@ -60,4 +59,5 @@ Ac8s:  45.69%   2.22%
 7dKd:  35.20%   0.29%
 ```
 
-
+## API docs
+Javadoc available [HERE](https://davideck123.github.io/joker-calc/docs)
