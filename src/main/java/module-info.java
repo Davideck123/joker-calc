@@ -1,3 +1,6 @@
+/**
+ * The main module of the joker calculator.
+ */
 module cz.matfyz.rudad.joker {
     requires com.google.common;
     requires info.picocli;
