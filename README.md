@@ -5,6 +5,9 @@ The evaluator is a Java port of [PokerHandEvaluator](https://github.com/HenryRLe
 which contains [a detailed explanation](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/Documentation/Algorithm.md) of the hand evaluation algorithm.
 The calculator then evaluates all combinations of cards that are left in the deck, and calculates the probability of each player winning/splitting.
 
+## API docs
+Javadoc available [HERE](./docs/index.html)
+
 ## Usage
 Cards are specified as card aliases (two character strings), where the first character is the rank 
 `2, 3, 4, 5, 6, 7, 8, 9, T, J, Q, K, A` and the second character is the suit `c, d, h, s` for clubs, diamonds, hearts and spades respectively.  
