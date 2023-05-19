@@ -1,0 +1,4 @@
+module:cz.matfyz.rudad.joker
+cz.matfyz.rudad.joker.calculator
+cz.matfyz.rudad.joker.card
+cz.matfyz.rudad.joker.evaluator
