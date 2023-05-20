@@ -58,13 +58,11 @@ jobs:
         with:
           source: README.md
           output: index.html
-          github-corners: https://github.com/jaywcjlove/markdown-to-html-cli
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./index.html
-                ./docs/
+          path: .
       
       - name: Deploy to GitHub Pages
         id: deployment
