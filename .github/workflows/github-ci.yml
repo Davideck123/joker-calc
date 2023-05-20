@@ -52,6 +52,13 @@ jobs:
           java-version: 17
           target-folder: docs # url will be https://<username>.github.io/<repo>/javadoc, This can be left as nothing to generate javadocs in the root folder.
           project: maven # or gradle
+          
+      - name: Convert README.md to html
+        uses: jaywcjlove/markdown-to-html-cli@main
+        with:
+          source: README.md
+          output: index.html
+          github-corners: https://github.com/jaywcjlove/markdown-to-html-cli
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
