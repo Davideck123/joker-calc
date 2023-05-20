@@ -54,9 +54,9 @@ jobs:
           project: maven # or gradle
       
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: docs
+          path: 'public'
       
       - name: Deploy to GitHub Pages
         id: deployment
