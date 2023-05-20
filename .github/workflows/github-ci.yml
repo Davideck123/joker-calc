@@ -58,6 +58,8 @@ jobs:
         with:
           source: README.md
           output: index.html
+          description: 🃏 JOKER - Java pOKER Calculator
+          dark-mode: false
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
