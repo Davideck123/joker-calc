@@ -69,6 +69,14 @@ Some interesting resources I found while studying the poker hand evaluation algo
 [Cactus Kev's Poker Hand Evaluator](http://suffe.cool/poker/evaluator.html)  
 [The Great Poker Hand Evaluator Roundup](https://www.codingthewheel.com/archives/poker-hand-evaluator-roundup/)  
 
-And some GUI-based evaluators I used to check the odds:  
+Some GUI-based evaluators I used to check the odds:  
 [Poker Master Tool](https://pokermastertool.bartoszputek.pl/) ([Github](https://github.com/bartoszputek/poker-master-tool))  
 [Texas Hold'em Odds Calculator](https://www.cardplayer.com/poker-tools/odds-calculator/texas-holdem)  
+
+Other poker evaluators:  
+[PokerHandEvaluator](https://github.com/HenryRLee/PokerHandEvaluator)  
+[TwoPlusTwoHandEvaluator](https://github.com/tangentforks/TwoPlusTwoHandEvaluator)  
+[SKPokerEval](https://github.com/kennethshackleton/SKPokerEval)  
+[OMPEval](https://github.com/zekyll/OMPEval)  
+[Java 5-card evaluator](https://github.com/jmp/poker-hand-evaluator)  
+[Collection of poker evaluators](https://github.com/tangentforks/XPokerEval)  
