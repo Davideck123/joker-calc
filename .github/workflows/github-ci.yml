@@ -1,5 +1,4 @@
-name: Deploy Javadoc
-
+name: Java CI
 
 on:
   push:
