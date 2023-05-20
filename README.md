@@ -61,3 +61,14 @@ Ac8s:  45.69%   2.22%
 
 ## API docs
 Javadoc available [HERE](https://davideck123.github.io/joker-calc/docs)
+
+## Resources
+Some interesting resources I found while studying the poker hand evaluation algorithms:  
+**[PokerHandEvaluator/Algorithm.md](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/Documentation/Algorithm.md) - The hand evaluation algorithm used in this project with super detailed explanation**  
+[Enumerating Five-Card Poker Hands](http://suffe.cool/poker/7462.html)  
+[Cactus Kev's Poker Hand Evaluator](http://suffe.cool/poker/evaluator.html)  
+[The Great Poker Hand Evaluator Roundup](https://www.codingthewheel.com/archives/poker-hand-evaluator-roundup/)  
+
+And some GUI-based evaluators I used to check the odds:  
+[Poker Master Tool](https://pokermastertool.bartoszputek.pl/) ([Github](https://github.com/bartoszputek/poker-master-tool))  
+[Texas Hold'em Odds Calculator](https://www.cardplayer.com/poker-tools/odds-calculator/texas-holdem)  
