@@ -8,9 +8,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -21,13 +19,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-      
-    - name: Run tests
-      run: mvn test
-
-#    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-#    - name: Update dependency graph
-#      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
 
   publish:
     runs-on: ubuntu-latest
@@ -38,46 +29,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           javadoc-branch: main
           java-version: 21
+          javadoc-source-folder: target/reports/apidocs # This is the target folder for `mvn javadoc:javadoc`
           target-folder: docs # url will be https://<username>.github.io/<repo>/javadoc, This can be left as nothing to generate javadocs in the root folder.
           project: maven # or gradle
-
-  #publish:
-  #  # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-  #  permissions:
-  #    pages: write      # to deploy to Pages
-  #    id-token: write   # to verify the deployment originates from an appropriate source
-  #    contents: write
-  #    
-  #  # Deploy to the github-pages environment
-  #  environment:
-  #  name: github-pages
-  #    url: ${{ steps.deployment.outputs.page_url }}
-  #    
-  #  # Specify runner + deployment step
-  #  runs-on: ubuntu-latest
-  #  steps:
-  #    - name: Deploy JavaDoc 🚀
-  #      uses: MathieuSoysal/Javadoc-publisher.yml@v2.5.0
-  #      with:
-  #        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #        javadoc-branch: main
-  #        java-version: 21
-  #        target-folder: docs # url will be https://<username>.github.io/<repo>/javadoc, This can be left as nothing to generate javadocs in the root folder.
-  #        project: maven # or gradle
-  #        
-  #    - name: Convert README.md to html
-  #      uses: jaywcjlove/markdown-to-html-cli@main
-  #      with:
-  #        source: README.md
-  #      output: index.html
-  #        dark-mode: false
-  #        description: '🃏 JOKER - Java pOKER Calculator'
-  #    
-  #    - name: Upload artifact
-  #      uses: actions/upload-pages-artifact@v1
-  #      with:
-  #        path: .
-  #    
-  #    - name: Deploy to GitHub Pages
-  #      id: deployment
-  #      uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
