@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Represents the command-line arguments for the Joker calculator application.
  */
-@Command(name = "joker", mixinStandardHelpOptions = true, version = "joker-calc 1.0")
+@Command(name = "joker", mixinStandardHelpOptions = true, version = "joker-calc 1.0.0")
 class CalculatorArgs {
     private final List<Player> players = new ArrayList<>();
 
