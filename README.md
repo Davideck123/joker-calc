@@ -7,6 +7,9 @@ The evaluator is a Java port of [PokerHandEvaluator](https://github.com/HenryRLe
 which contains [a detailed explanation](https://github.com/HenryRLee/PokerHandEvaluator/blob/master/Documentation/Algorithm.md) of the hand evaluation algorithm.
 The calculator then evaluates all combinations of cards that are left in the deck, and calculates the probability of each player winning/splitting.
 
+## Build
+To use the joker calculator from the command line, simply run `mvn clean package` to build the jar and then you can use the `./joker` command in the top level directory.
+
 ## Usage
 Cards are specified as card aliases (two character strings), where the first character is the rank 
 `2, 3, 4, 5, 6, 7, 8, 9, T, J, Q, K, A` and the second character is the suit `c, d, h, s` for clubs, diamonds, hearts and spades respectively.  
@@ -38,7 +41,7 @@ and the board is 3♦️ (Three of Diamonds), 5♣️ (Five of Clubs) and K♣�
 The scenario is represented as follows: `Ah Kh Qc Qd 7c 7d -b 3d 5c Kc`  
 
 ```
-java -cp ... cz.matfyz.rudad.joker.calculator.Calculator Ah Kh Qc Qd 7c 7d -b 3d 5c Kc
+./joker Ah Kh Qc Qd 7c 7d -b 3d 5c Kc
         Win     Tie
 AhKh:  76.41%   0.00%
 QcQd:  13.18%   0.00%
@@ -52,7 +55,7 @@ and the dead cards are K♥️ (King of Hearts) and 2♣️ (Deuce of Clubs).
 The scenario is represented as follows: `Ac 8s 5c 8h 7d Kd -d Kh 2c`
 
 ```
-java -cp ... cz.matfyz.rudad.joker.calculator.Calculator Ac 8s 5c 8h 7d Kd -d Kh 2c
+./joker Ac 8s 5c 8h 7d Kd -d Kh 2c
         Win     Tie
 Ac8s:  45.69%   2.22%
 5c8h:  16.90%   2.22%
