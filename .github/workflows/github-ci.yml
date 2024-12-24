@@ -27,7 +27,7 @@ jobs:
         uses: MathieuSoysal/Javadoc-publisher.yml@v2.5.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          deploy-mode: artifact
+          deploy-mode: "artifact"
           #javadoc-branch: javadoc
           java-version: 21
           javadoc-source-folder: target/reports/apidocs # This is the target folder for `mvn javadoc:javadoc`
