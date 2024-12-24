@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"cz.matfyz.rudad.joker","l":"cz.matfyz.rudad.joker.calculator"},{"m":"cz.matfyz.rudad.joker","l":"cz.matfyz.rudad.joker.card"},{"m":"cz.matfyz.rudad.joker","l":"cz.matfyz.rudad.joker.evaluator"}];updateSearchResults();
