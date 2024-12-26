@@ -24,6 +24,7 @@ Optionally specify the dead cards (the cards that are no longer in the deck) as 
 seperated card aliases, e.g. `-d Tc 2c` for 10♣️ (Ten of Clubs) and 2♣️ (Deuce of Clubs).
 
 ```
+./joker -h
 Usage: joker [-hV] [-b=<card>]... [-d=<card>]... (<card> <card>)...
       (<card> <card>)...   Player cards (2 cards per player, 2 to 10 players).
   -b, --board=<card>       Board cards - flop, turn or river (3 to 5 cards).
