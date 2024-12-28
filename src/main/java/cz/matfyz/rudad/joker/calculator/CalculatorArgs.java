@@ -47,6 +47,12 @@ class CalculatorArgs {
     )
     private final List<Card> deadCards = new ArrayList<>();
 
+    @Option(
+            names = {"-e", "--emoji"},
+            description = "Display emojis for suits instead of letters."
+    )
+    private boolean printEmojis;
+
     private final CommandLine commandLine = new CommandLine(this);
 
     /**
@@ -96,6 +102,15 @@ class CalculatorArgs {
      */
     List<Card> getDeadCards() {
         return deadCards;
+    }
+
+    /**
+     * Returns whether emojis should be printed instead of letters.
+     *
+     * @return true if emojis should be printed, false otherwise
+     */
+    boolean shouldPrintEmojis() {
+        return printEmojis;
     }
 
     /**

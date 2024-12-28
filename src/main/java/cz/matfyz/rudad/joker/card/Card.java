@@ -14,6 +14,8 @@ public class Card implements AutoCloseable {
     private final Suit suit;
     private final int cardId;
 
+    private static boolean printSuitEmojis = false;
+
     /**
      * Constructs a Card instance with the given card ID.
      *
@@ -131,13 +133,31 @@ public class Card implements AutoCloseable {
     }
 
     /**
+     * Returns if the suit emoji should be printed.
+     *
+     * @return {@code true} if the suit emoji should be printed, {@code false} otherwise
+     */
+    public static boolean isPrintSuitEmojis() {
+        return printSuitEmojis;
+    }
+
+    /**
+     * Sets if the suit emoji should be printed.
+     *
+     * @param printSuitEmojis {@code true} if the suit emoji should be printed, {@code false} otherwise
+     */
+    public static void setPrintSuitEmojis(boolean printSuitEmojis) {
+        Card.printSuitEmojis = printSuitEmojis;
+    }
+
+    /**
      * Returns the string representation of the card.
      *
      * @return the string representation
      */
     @Override
     public String toString() {
-        return rank.toString() + suit;
+        return rank.toString() + (printSuitEmojis ? suit.emoji() : suit);
     }
 
 }

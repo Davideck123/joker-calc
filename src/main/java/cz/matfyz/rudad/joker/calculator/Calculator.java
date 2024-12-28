@@ -114,6 +114,9 @@ public class Calculator {
                 calculatorArgs.getCommandLine().printVersionHelp(System.out);
                 return;
             }
+            // Set whether to print emojis for suits or not
+            Card.setPrintSuitEmojis(calculatorArgs.shouldPrintEmojis());
+
             Calculator calculator = new Calculator(calculatorArgs);
             calculator.calculate().printOdds();
         } catch (CommandLine.PicocliException | IllegalArgumentException e) {

@@ -19,6 +19,13 @@ public enum Suit {
             SuitAlias.SPADES, SPADES
     );
 
+    private static final Map<Character, String> emojiMap = Map.of(
+            SuitAlias.CLUBS, SuitEmoji.CLUBS,
+            SuitAlias.DIAMONDS, SuitEmoji.DIAMONDS,
+            SuitAlias.HEARTS, SuitEmoji.HEARTS,
+            SuitAlias.SPADES, SuitEmoji.SPADES
+    );
+
     private final char alias;
 
     /**
@@ -75,6 +82,15 @@ public enum Suit {
     public String toString() {
         return String.valueOf(alias);
     }
+
+    /**
+     * Returns the emoji representation of the suit.
+     *
+     * @return the emoji representation
+     */
+    public String emoji() {
+        return String.valueOf(emojiMap.get(alias));
+    }
 }
 
 /**
@@ -85,4 +101,14 @@ class SuitAlias {
     static final char DIAMONDS = 'd';
     static final char HEARTS = 'h';
     static final char SPADES = 's';
+}
+
+/**
+ * Contains emojis for the suits.
+ */
+class SuitEmoji {
+    static final String CLUBS = "♣️";
+    static final String DIAMONDS = "♦️";
+    static final String HEARTS = "♥️";
+    static final String SPADES = "♠️";
 }

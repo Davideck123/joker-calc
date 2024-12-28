@@ -25,12 +25,21 @@ seperated card aliases, e.g. `-d Tc 2c` for 10♣️ (Ten of Clubs) and 2♣️ 
 
 ```
 ./joker -h
-Usage: joker [-hV] [-b=<card>]... [-d=<card>]... (<card> <card>)...
+Usage: joker [-ehV] [-b=<card>]... [-d=<card>]... (<card> <card>)...
       (<card> <card>)...   Player cards (2 cards per player, 2 to 10 players).
   -b, --board=<card>       Board cards - flop, turn or river (3 to 5 cards).
   -d, --dead=<card>        Cards that are no longer in the deck (1 to 19 cards).
+  -e, --emoji              Display emojis for suits instead of letters.
   -h, --help               Show this help message and exit.
   -V, --version            Print version information and exit.
+```
+
+Also, you can use the `-e` flag to display emojis for suits instead of letters.
+```
+./joker Jh 9s Ac 2d --emoji
+        Win     Tie
+J♥️9♠️:  43,82%   0,43%
+A♣️2♦️:  55,75%   0,43%
 ```
 
 ## Examples
