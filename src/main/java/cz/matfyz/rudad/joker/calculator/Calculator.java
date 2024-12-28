@@ -289,7 +289,9 @@ public class Calculator {
      * Prints a summary of the odds of winning and tying for each player.
      */
     public void printOdds() {
-        System.out.printf("        %s     %s\n", "Win", "Tie");
+        // Align the output
+        var numSpaces = players[0].toString().length();
+        System.out.printf("%s    %s     %s\n"," ".repeat(numSpaces) , "Win", "Tie");
         for (Player player : players) {
             System.out.printf("%s: %6.2f%% %6.2f%%\n", player, 100 * player.getWinProbability(), 100 * player.getTieProbability());
         }

@@ -38,8 +38,8 @@ Also, you can use the `-e` flag to display emojis for suits instead of letters.
 ```
 ./joker Jh 9s Ac 2d --emoji
         Win     Tie
-J♥️9♠️:  43,82%   0,43%
-A♣️2♦️:  55,75%   0,43%
+J♥️9♠️:  43.82%   0,43%
+A♣️2♦️:  55.75%   0,43%
 ```
 
 ## Examples
